@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Предварительная диагностика ручных бизнес-процессов и формирование персонального Паспорта автоматизации бизнеса."
+  >
+
+  <title>Паспорт автоматизации бизнеса</title>
+
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/app.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Перейти в начало страницы">
+        <span class="brand-mark">ПА</span>
+
+        <span class="brand-text">
+          <strong>Паспорт автоматизации</strong>
+          <small>Предварительная диагностика бизнеса</small>
+        </span>
+      </a>
+
+      <a
+        class="header-contact"
+        href="https://t.me/Gulshat_Akhmadieva"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Связаться в Telegram
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Диагностический сервис для бизнеса</p>
+
+          <h1>Что в вашем бизнесе можно автоматизировать уже сейчас?</h1>
+
+          <p class="hero-lead">
+            Ответьте на несколько вопросов и получите предварительный разбор
+            процесса: возможную экономию времени, подходящий формат решения,
+            риски и план первого запуска.
+          </p>
+
+          <div class="hero-actions">
+            <button class="button button-primary" id="startDiagnosisButton" type="button">
+              Начать диагностику
+            </button>
+
+            <a class="button button-secondary" href="#how-it-works">
+              Как это работает
+            </a>
+          </div>
+
+          <p class="hero-note">
+            Диагностика носит предварительный характер и не является
+            окончательным техническим заданием или коммерческим предложением.
+          </p>
+        </div>
+
+        <aside class="document-preview" aria-label="Пример паспорта">
+          <div class="document-preview__top">
+            <span>BUSINESS PROCESS FILE</span>
+            <span id="previewDate">—</span>
+          </div>
+
+          <div class="document-preview__stamp">
+            Предварительная диагностика
+          </div>
+
+          <p class="document-preview__number">
+            Документ № <span id="previewDocumentNumber">000000</span>
+          </p>
+
+          <h2>Паспорт автоматизации бизнеса</h2>
+
+          <dl class="document-preview__list">
+            <div>
+              <dt>01</dt>
+              <dd>Трудозатраты процесса</dd>
+            </div>
+
+            <div>
+              <dt>02</dt>
+              <dd>Потенциал автоматизации</dd>
+            </div>
+
+            <div>
+              <dt>03</dt>
+              <dd>Рекомендуемый формат решения</dd>
+            </div>
+
+            <div>
+              <dt>04</dt>
+              <dd>Риски и первый этап запуска</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Как проходит диагностика</p>
+          <h2>От ручного процесса — к понятному плану действий</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <span class="process-card__number">01</span>
+            <h3>Опишите процесс</h3>
+            <p>
+              Расскажите, что сотрудники делают вручную, как часто и сколько
+              времени это занимает.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <span class="process-card__number">02</span>
+            <h3>Зафиксируйте проблемы</h3>
+            <p>
+              Отметьте, где теряется время, возникают ошибки или повторяются
+              одинаковые действия.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <span class="process-card__number">03</span>
+            <h3>Получите паспорт</h3>
+            <p>
+              Сервис рассчитает трудозатраты и сформирует предварительный план
+              автоматизации.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="diagnosis-section" id="diagnosis">
+      <div class="container">
+        <div class="diagnosis-shell">
+          <aside class="diagnosis-sidebar">
+            <p class="sidebar-label">Ваш документ</p>
+
+            <h2>Паспорт автоматизации бизнеса</h2>
+
+            <div class="progress-block">
+              <div class="progress-meta">
+                <span>Заполнение</span>
+                <strong id="progressPercent">20%</strong>
+              </div>
+
+              <div
+                class="progress-track"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="20"
+                aria-label="Прогресс заполнения диагностики"
+              >
+                <span id="progressBar"></span>
+              </div>
+            </div>
+
+            <ol class="step-navigation" id="stepNavigation">
+              <li class="is-active" data-step-indicator="1">
+                <span>01</span>
+                <div>
+                  <strong>О бизнесе</strong>
+                  <small>Контекст и участники</small>
+                </div>
+              </li>
+
+              <li data-step-indicator="2">
+                <span>02</span>
+                <div>
+                  <strong>Текущий процесс</strong>
+                  <small>Частота и время</small>
+                </div>
+              </li>
+
+              <li data-step-indicator="3">
+                <span>03</span>
+                <div>
+                  <strong>Проблемы</strong>
+                  <small>Потери и ошибки</small>
+                </div>
+              </li>
+
+              <li data-step-indicator="4">
+                <span>04</span>
+                <div>
+                  <strong>Данные</strong>
+                  <small>Системы и ограничения</small>
+                </div>
+              </li>
+
+              <li data-step-indicator="5">
+                <span>05</span>
+                <div>
+                  <strong>Результат</strong>
+                  <small>Цель внедрения</small>
+                </div>
+              </li>
+            </ol>
+
+            <button class="text-button" id="clearSavedDataButton" type="button">
+              Очистить сохранённые ответы
+            </button>
+          </aside>
+
+          <div class="diagnosis-content">
+            <form id="diagnosisForm" novalidate>
+              <section class="form-step is-active" data-step="1">
+                <div class="form-step__header">
+                  <p class="step-kicker">Раздел 01</p>
+                  <h2>Расскажите немного о бизнесе</h2>
+                  <p>
+                    Эти данные помогут сформировать более точный и понятный
+                    результат.
+                  </p>
+                </div>
+
+                <div class="form-grid">
+                  <label class="field field-full">
+                    <span class="field-label">
+                      Название компании или проекта
+                      <small>необязательно</small>
+                    </span>
+
+                    <input
+                      type="text"
+                      id="companyName"
+                      name="companyName"
+                      autocomplete="organization"
+                      placeholder="Например: студия дизайна или интернет-магазин"
+                    >
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Сфера деятельности
+                      <span class="required-mark">*</span>
+                    </span>
+
+                    <input
+                      type="text"
+                      id="businessSphere"
+                      name="businessSphere"
+                      required
+                      placeholder="Например: продажи, услуги, производство"
+                    >
+
+                    <span class="field-error" data-error-for="businessSphere"></span>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Ваша роль
+                      <span class="required-mark">*</span>
+                    </span>
+
+                    <select id="userRole" name="userRole" required>
+                      <option value="">Выберите вариант</option>
+                      <option value="Собственник">Собственник</option>
+                      <option value="Руководитель">Руководитель</option>
+                      <option value="Специалист">Специалист</option>
+                      <option value="Эксперт">Эксперт</option>
+                      <option value="Самозанятый">Самозанятый</option>
+                      <option value="Другое">Другое</option>
+                    </select>
+
+                    <span class="field-error" data-error-for="userRole"></span>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Сколько людей участвует в процессе?
+                      <span class="required-mark">*</span>
+                    </span>
+
+                    <input
+                      type="number"
+                      id="peopleCount"
+                      name="peopleCount"
+                      min="1"
+                      max="10000"
+                      value="1"
+                      required
+                    >
+
+                    <span class="field-hint">
+                      Укажите всех сотрудников, которые регулярно тратят время
+                      на этот процесс.
+                    </span>
+
+                    <span class="field-error" data-error-for="peopleCount"></span>
+                  </label>
+                </div>
+
+                <div class="form-actions form-actions-end">
+                  <button class="button button-primary next-step" type="button">
+                    Перейти к процессу
+                  </button>
+                </div>
+              </section>
+
+              <section class="form-step" data-step="2" hidden>
+                <div class="form-step__header">
+                  <p class="step-kicker">Раздел 02</p>
+                  <h2>Что происходит сейчас?</h2>
+                  <p>
+                    Опишите один конкретный процесс, который регулярно
+                    выполняется вручную.
+                  </p>
+                </div>
+
+                <div class="form-grid">
+                  <label class="field field-full">
+                    <span class="field-label">
+                      Кратко опишите ручной процесс
+                      <span class="required-mark">*</span>
+                    </span>
+
+                    <textarea
+                      id="processDescription"
+                      name="processDescription"
+                      rows="6"
+                      required
+                      placeholder="Например: менеджер получает заказы из Telegram, вручную переносит данные в таблицу и вечером собирает отчёт для руководителя."
+                    ></textarea>
+
+                    <span class="field-error" data-error-for="processDescription"></span>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Кто выполняет процесс?
+                      <span class="required-mark">*</span>
+                    </span>
+
+                    <input
+                      type="text"
+                      id="processOwner"
+                      name="processOwner"
+                      required
+                      placeholder="Например: менеджер, бухгалтер, собственник"
+                    >
+
+                    <span class="field-error" data-error-for="processOwner"></span>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Как часто процесс повторяется?
+                      <span class="required-mark">*</span>
+                    </span>
+
+                    <select id="processFrequency" name="processFrequency" required>
+                      <option value="">Выберите частоту</option>
+                      <option value="several_per_day">Несколько раз в день</option>
+                      <option value="daily">Ежедневно</option>
+                      <option value="several_per_week">Несколько раз в неделю</option>
+                      <option value="weekly">Еженедельно</option>
+                      <option value="several_per_month">Несколько раз в месяц</option>
+                      <option value="monthly">Ежемесячно</option>
+                    </select>
+
+                    <span class="field-error" data-error-for="processFrequency"></span>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Время одного выполнения
+                      <span class="required-mark">*</span>
+                    </span>
+
+                    <input
+                      type="number"
+                      id="timePerExecution"
+                      name="timePerExecution"
+                      min="1"
+                      step="1"
+                      required
+                      placeholder="Например: 30"
+                    >
+
+                    <span class="field-error" data-error-for="timePerExecution"></span>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Единица времени
+                      <span class="required-mark">*</span>
+                    </span>
+
+                    <select id="timeUnit" name="timeUnit" required>
+                      <option value="minutes">Минуты</option>
+                      <option value="hours">Часы</option>
+                    </select>
+
+                    <span class="field-error" data-error-for="timeUnit"></span>
+                  </label>
+                </div>
+
+                <div class="form-actions">
+                  <button class="button button-secondary previous-step" type="button">
+                    Назад
+                  </button>
+
+                  <button class="button button-primary next-step" type="button">
+                    Перейти к проблемам
+                  </button>
+                </div>
+              </section>
+
+              <section class="form-step" data-step="3" hidden>
+                <div class="form-step__header">
+                  <p class="step-kicker">Раздел 03</p>
+                  <h2>Где возникают потери и сложности?</h2>
+                  <p>
+                    Выберите все варианты, которые относятся к описанному
+                    процессу.
+                  </p>
+                </div>
+
+                <fieldset class="option-group">
+                  <legend>
+                    Основные проблемы
+                    <span class="required-mark">*</span>
+                  </legend>
+
+                  <div class="checkbox-grid" id="problemOptions">
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Ручной перенос данных">
+                      <span>Ручной перенос данных</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Подготовка отчётов">
+                      <span>Подготовка отчётов</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Обработка заявок">
+                      <span>Обработка заявок</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Повторяющиеся ответы клиентам">
+                      <span>Повторяющиеся ответы клиентам</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Работа с таблицами">
+                      <span>Работа с таблицами</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Работа с документами">
+                      <span>Работа с документами</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Сверка информации">
+                      <span>Сверка информации</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Поиск данных">
+                      <span>Поиск данных</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Формирование каталогов">
+                      <span>Формирование каталогов</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Контроль сроков">
+                      <span>Контроль сроков</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Ошибки сотрудников">
+                      <span>Ошибки сотрудников</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Потеря информации">
+                      <span>Потеря информации</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Подготовка текстов и материалов">
+                      <span>Подготовка текстов и материалов</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Аналитика">
+                      <span>Аналитика</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="problems" value="Другое">
+                      <span>Другое</span>
+                    </label>
+                  </div>
+
+                  <span class="field-error" id="problemsError"></span>
+                </fieldset>
+
+                <div class="form-grid form-grid-top">
+                  <label class="field">
+                    <span class="field-label">
+                      Как часто возникают ошибки или повторные исправления?
+                    </span>
+
+                    <select id="errorFrequency" name="errorFrequency">
+                      <option value="rarely">Редко</option>
+                      <option value="sometimes">Иногда</option>
+                      <option value="often">Часто</option>
+                      <option value="very_often">Практически постоянно</option>
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Насколько процесс зависит от решений человека?
+                    </span>
+
+                    <select id="humanDependency" name="humanDependency">
+                      <option value="low">В основном выполняется по правилам</option>
+                      <option value="medium">Иногда требуется решение человека</option>
+                      <option value="high">Сильно зависит от опыта специалиста</option>
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Есть ли понятный повторяемый результат?
+                    </span>
+
+                    <select id="repeatableResult" name="repeatableResult">
+                      <option value="yes">Да, результат стандартизирован</option>
+                      <option value="partly">Частично</option>
+                      <option value="no">Нет, каждый случай уникален</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="form-actions">
+                  <button class="button button-secondary previous-step" type="button">
+                    Назад
+                  </button>
+
+                  <button class="button button-primary next-step" type="button">
+                    Перейти к данным
+                  </button>
+                </div>
+              </section>
+
+              <section class="form-step" data-step="4" hidden>
+                <div class="form-step__header">
+                  <p class="step-kicker">Раздел 04</p>
+                  <h2>Где находятся данные?</h2>
+                  <p>
+                    Это поможет определить возможные ограничения и требования
+                    к будущему решению.
+                  </p>
+                </div>
+
+                <fieldset class="option-group">
+                  <legend>
+                    Используемые системы и источники
+                    <span class="required-mark">*</span>
+                  </legend>
+
+                  <div class="checkbox-grid" id="systemOptions">
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="Excel">
+                      <span>Excel</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="Google Таблицы">
+                      <span>Google Таблицы</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="CRM">
+                      <span>CRM</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="Telegram">
+                      <span>Telegram</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="Электронная почта">
+                      <span>Электронная почта</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="1С">
+                      <span>1С</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="Сайт">
+                      <span>Сайт</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="Маркетплейсы">
+                      <span>Маркетплейсы</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="PDF и Word-документы">
+                      <span>PDF и Word-документы</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="Локальные папки">
+                      <span>Локальные папки</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="Несколько разных систем">
+                      <span>Несколько разных систем</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="systems" value="Другое">
+                      <span>Другое</span>
+                    </label>
+                  </div>
+
+                  <span class="field-error" id="systemsError"></span>
+                </fieldset>
+
+                <div class="form-grid form-grid-top">
+                  <label class="field">
+                    <span class="field-label">Есть ли единый источник данных?</span>
+
+                    <select id="singleDataSource" name="singleDataSource">
+                      <option value="yes">Да</option>
+                      <option value="partly">Частично</option>
+                      <option value="no">Нет, данные разбросаны</option>
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Есть ли примеры правильного результата?
+                    </span>
+
+                    <select id="resultExamples" name="resultExamples">
+                      <option value="yes">Да</option>
+                      <option value="partly">Есть отдельные примеры</option>
+                      <option value="no">Пока нет</option>
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Есть ли персональные или конфиденциальные данные?
+                    </span>
+
+                    <select id="sensitiveData" name="sensitiveData">
+                      <option value="no">Нет</option>
+                      <option value="possibly">Возможно</option>
+                      <option value="yes">Да</option>
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span class="field-label">
+                      Нужно ли подтверждение результата человеком?
+                    </span>
+
+                    <select id="humanApproval" name="humanApproval">
+                      <option value="yes">Да, обязательно</option>
+                      <option value="sometimes">Только в отдельных случаях</option>
+                      <option value="no">Нет</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="form-actions">
+                  <button class="button button-secondary previous-step" type="button">
+                    Назад
+                  </button>
+
+                  <button class="button button-primary next-step" type="button">
+                    Перейти к цели
+                  </button>
+                </div>
+              </section>
+
+              <section class="form-step" data-step="5" hidden>
+                <div class="form-step__header">
+                  <p class="step-kicker">Раздел 05</p>
+                  <h2>Какой результат вы хотите получить?</h2>
+                  <p>
+                    Выберите основные цели и опишите, как должен выглядеть
+                    улучшенный процесс.
+                  </p>
+                </div>
+
+                <fieldset class="option-group">
+                  <legend>
+                    Цели внедрения
+                    <span class="required-mark">*</span>
+                  </legend>
+
+                  <div class="checkbox-grid" id="goalOptions">
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Сократить ручную работу">
+                      <span>Сократить ручную работу</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Ускорить обработку заявок">
+                      <span>Ускорить обработку заявок</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Автоматически формировать отчёты">
+                      <span>Автоматически формировать отчёты</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Уменьшить количество ошибок">
+                      <span>Уменьшить количество ошибок</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Объединить данные">
+                      <span>Объединить данные</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Создать мини-сервис">
+                      <span>Создать мини-сервис</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Создать ИИ-ассистента">
+                      <span>Создать ИИ-ассистента</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Автоматизировать документы">
+                      <span>Автоматизировать документы</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Улучшить клиентский сервис">
+                      <span>Улучшить клиентский сервис</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Создать систему контроля">
+                      <span>Создать систему контроля</span>
+                    </label>
+
+                    <label class="choice-card">
+                      <input type="checkbox" name="goals" value="Другое">
+                      <span>Другое</span>
+                    </label>
+                  </div>
+
+                  <span class="field-error" id="goalsError"></span>
+                </fieldset>
+
+                <label class="field field-full form-grid-top">
+                  <span class="field-label">
+                    Опишите идеальный результат после внедрения
+                    <span class="required-mark">*</span>
+                  </span>
+
+                  <textarea
+                    id="desiredResult"
+                    name="desiredResult"
+                    rows="6"
+                    required
+                    placeholder="Например: заявки автоматически собираются в одном месте, менеджер проверяет готовые данные, а руководитель получает ежедневный отчёт без ручного составления."
+                  ></textarea>
+
+                  <span class="field-error" data-error-for="desiredResult"></span>
+                </label>
+
+                <div class="form-actions">
+                  <button class="button button-secondary previous-step" type="button">
+                    Назад
+                  </button>
+
+                  <button class="button button-primary" id="generatePassportButton" type="submit">
+                    Сформировать паспорт
+                  </button>
+                </div>
+              </section>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section" id="results" hidden>
+      <div class="container">
+        <article class="passport-document" id="passportDocument">
+          <header class="passport-header">
+            <div>
+              <p class="passport-label">Персональный диагностический документ</p>
+              <h2>Паспорт автоматизации бизнеса</h2>
+            </div>
+
+            <div class="passport-meta">
+              <p>
+                Документ №
+                <strong id="resultDocumentNumber">—</strong>
+              </p>
+
+              <p>
+                Дата:
+                <strong id="resultDate">—</strong>
+              </p>
+            </div>
+          </header>
+
+          <section class="passport-summary">
+            <div class="summary-main">
+              <span class="summary-label">Потенциал автоматизации</span>
+              <strong id="automationPotential">—</strong>
+              <p id="automationPotentialDescription">—</p>
+            </div>
+
+            <div class="summary-metrics">
+              <div>
+                <span>Текущие трудозатраты</span>
+                <strong id="monthlyWorkload">—</strong>
+                <small>за месяц</small>
+              </div>
+
+              <div>
+                <span>Возможно освободить</span>
+                <strong id="potentialTimeSavings">—</strong>
+                <small>предварительная оценка</small>
+              </div>
+            </div>
+          </section>
+
+          <section class="passport-section">
+            <div class="passport-section__number">01</div>
+
+            <div class="passport-section__content">
+              <h3>Диагностируемый процесс</h3>
+              <p id="resultProcessDescription">—</p>
+
+              <dl class="passport-details">
+                <div>
+                  <dt>Сфера</dt>
+                  <dd id="resultBusinessSphere">—</dd>
+                </div>
+
+                <div>
+                  <dt>Исполнитель</dt>
+                  <dd id="resultProcessOwner">—</dd>
+                </div>
+
+                <div>
+                  <dt>Главный источник потерь</dt>
+                  <dd id="mainTimeLoss">—</dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+
+          <section class="passport-section">
+            <div class="passport-section__number">02</div>
+
+            <div class="passport-section__content">
+              <h3>Рекомендуемый формат решения</h3>
+
+              <div class="recommendation-box">
+                <strong id="recommendedSolution">—</strong>
+                <p id="recommendedSolutionReason">—</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="passport-section">
+            <div class="passport-section__number">03</div>
+
+            <div class="passport-section__content">
+              <h3>Ожидаемый эффект</h3>
+              <ul class="passport-list" id="expectedEffects"></ul>
+            </div>
+          </section>
+
+          <section class="passport-section">
+            <div class="passport-section__number">04</div>
+
+            <div class="passport-section__content">
+              <h3>Что потребуется для запуска</h3>
+              <ul class="passport-list" id="launchRequirements"></ul>
+            </div>
+          </section>
+
+          <section class="passport-section">
+            <div class="passport-section__number">05</div>
+
+            <div class="passport-section__content">
+              <h3>Риски и ограничения</h3>
+              <ul class="passport-list passport-list-warning" id="riskList"></ul>
+            </div>
+          </section>
+
+          <section class="passport-section">
+            <div class="passport-section__number">06</div>
+
+            <div class="passport-section__content">
+              <h3>Черновик первой версии решения</h3>
+
+              <dl class="mvp-grid">
+                <div>
+                  <dt>Цель</dt>
+                  <dd id="mvpGoal">—</dd>
+                </div>
+
+                <div>
+                  <dt>Входные данные</dt>
+                  <dd id="mvpInput">—</dd>
+                </div>
+
+                <div>
+                  <dt>Что делает решение</dt>
+                  <dd id="mvpAction">—</dd>
+                </div>
+
+                <div>
+                  <dt>Результат</dt>
+                  <dd id="mvpOutput">—</dd>
+                </div>
+
+                <div>
+                  <dt>Контроль человека</dt>
+                  <dd id="mvpHumanControl">—</dd>
+                </div>
+
+                <div>
+                  <dt>Критерий успеха</dt>
+                  <dd id="mvpSuccess">—</dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+
+          <footer class="passport-footer">
+            <div>
+              <p class="passport-footer__title">
+                Следующий шаг
+              </p>
+
+              <h3>Получите индивидуальный разбор задачи и расчёт проекта</h3>
+
+              <p>
+                Предварительный паспорт помогает сформулировать задачу, но не
+                заменяет изучение реального процесса, данных и ограничений.
+              </p>
+            </div>
+
+            <a
+              class="button button-primary"
+              href="https://t.me/Gulshat_Akhmadieva"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Обсудить проект
+            </a>
+          </footer>
+        </article>
+
+        <div class="result-actions">
+          <button class="button button-secondary" id="copyPassportButton" type="button">
+            Скопировать паспорт
+          </button>
+
+          <button class="button button-secondary" id="downloadPassportButton" type="button">
+            Скачать Markdown
+          </button>
+
+          <button class="button button-secondary" id="printPassportButton" type="button">
+            Распечатать
+          </button>
+
+          <button class="button button-primary" id="restartDiagnosisButton" type="button">
+            Пройти заново
+          </button>
+        </div>
+
+        <p class="result-disclaimer">
+          Расчёты являются предварительными и основаны на ответах пользователя.
+          Фактический эффект зависит от качества данных, правил процесса,
+          доступных интеграций и условий внедрения.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Паспорт автоматизации бизнеса</strong>
+        <p>Инструмент предварительной диагностики ручных процессов.</p>
+      </div>
+
+      <div class="footer-author">
+        <span>Автор проекта</span>
+
+        <a
+          href="https://t.me/Gulshat_Akhmadieva"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Гульшат Ахмадиева
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
